@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMARTSWAP - College Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to SMARTSWAP!</h1>
+        <p>A marketplace exclusively for college students. Buy, Sell, Swap!</p>
+        <nav>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showSignup()">Sign Up</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Login Section -->
+        <section id="login" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <br>
+                <button type="button" onclick="validateLogin()">Login</button>
+            </form>
+        </section>
+
+        <!-- Sign Up Section -->
+        <section id="signup" style="display:none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" required>
+                <br>
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" required>
+                <br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+
+        <!-- Role Selection Section (Junior/Senior) -->
+        <section id="roleSelection" style="display:none;">
+            <h2>Who are you?</h2>
+            <button onclick="chooseRole('junior')">Junior</button>
+            <button onclick="chooseRole('senior')">Senior</button>
+        </section>
+
+        <!-- Buy or Sell Section -->
+        <section id="buyOrSell" style="display:none;">
+            <h2>What would you like to do?</h2>
+            <button onclick="chooseAction('buy')">Buy</button>
+            <button onclick="chooseAction('sell')">Sell</button>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" style="display:none;">
+            <h2>Select a Category</h2>
+            <button onclick="showItems('Books and Notes')">Books and Notes</button>
+            <button onclick="showItems('Furnishings')">Furnishings</button>
+            <button onclick="showItems('Electronics')">Electronics</button>
+            <button onclick="showItems('Apparel')">Apparel</button>
+            <button onclick="showItems('Misc')">Miscellaneous</button>
+        </section>
+
+        <!-- Items Section (for Buy) -->
+        <section id="items" style="display:none;">
+            <h2>Items for Sale</h2>
+            <div id="itemList"></div>
+        </section>
+
+        <!-- Sell Section (Upload Image and Details) -->
+        <section id="sellSection" style="display:none;">
+            <h2>Sell an Item</h2>
+            <form id="sellForm">
+                <label for="sellCategory">Category:</label>
+                <select id="sellCategory">
+                    <option value="Books and Notes">Books and Notes</option>
+                    <option value="Furnishings">Furnishings</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Apparel">Apparel</option>
+                    <option value="Misc">Miscellaneous</option>
+                </select>
+                <br>
+                <label for="sellImage">Upload Image:</label>
+                <input type="file" id="sellImage" accept="image/jpg">
+                <br>
+                <label for="sellPrice">Price (INR):</label>
+                <input type="number" id="sellPrice" required>
+                <br>
+                <button type="button" onclick="postItem()">Post</button>
+            </form>
+        </section>
+
+        <!-- Subscription Section -->
+        <section id="subscription" style="display:none;">
+            <h2>Choose a Subscription Plan</h2>
+            <button onclick="buySubscription('SELL ON TOP')">SELL ON TOP</button>
+            <button onclick="buySubscription('Monthly Subscription')">Monthly Subscription</button>
+            <button onclick="buySubscription('Yearly Subscription')">Yearly Subscription</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

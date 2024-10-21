@@ -1,0 +1,49 @@
+/* Background Image */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://i.pinimg.com/564x/92/eb/fe/92ebfe6bc11b6324b9ea487c46261024.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.fancyButton {
+    background-color: #6200ea;
+    color: Blue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.fancyButton:hover {
+    background-color: #3700b3;
+    transform: scale(1.1);
+}
+
+section {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button {
+    animation: buttonPop 0.5s ease-in-out;
+}
+
+@keyframes buttonPop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
